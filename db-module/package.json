@@ -1,0 +1,23 @@
+{
+  "name": "db-module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "eslint": "eslint --fix",
+    "setup": "NODE_ENV=development DEBUG=node-iot:* node setup.js"
+  },
+  "author": "bmonsalves",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^5.1.0"
+  },
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2016": "^6.24.1",
+    "debug": "^3.1.0",
+    "pg": "^7.4.3",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^4.38.0"
+  }
+}
