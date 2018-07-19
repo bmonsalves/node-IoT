@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize');
-const DbSetup = require('../lib/db');
+const DbSetup = require('../services/db');
 module.exports = MetricModel =  (config) => {
     const sequelize = DbSetup(config);
 
