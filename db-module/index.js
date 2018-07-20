@@ -5,7 +5,7 @@ const defaults = require('defaults');
 const setupAgent = require('./services/agent');
 const setupMetric = require('./services/metric');
 
-module.exports = async (config) => {
+module.exports = async (config, force_db = false) => {
 
   config = defaults(config,{
       dialect: 'sqlite',
@@ -29,7 +29,7 @@ module.exports = async (config) => {
   await sequelize.authenticate();
 
   if(config.setup){
-    await sequelize.sync({force: false});
+    await sequelize.sync({force: force_db});
   }
 
   const Agent = setupAgent(agent);
