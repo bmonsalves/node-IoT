@@ -2,10 +2,11 @@ const DbSetup = require('./services/db');
 const AgentModel = require('./models/agent');
 const MetricModel = require('./models/metric');
 const defaults = require('defaults');
-const setupAgent = require('./services/agent')
-
+const setupAgent = require('./services/agent');
+const setupMetric = require('./services/metric');
 
 module.exports = async (config) => {
+
   config = defaults(config,{
       dialect: 'sqlite',
       pool:{
@@ -28,11 +29,11 @@ module.exports = async (config) => {
   await sequelize.authenticate();
 
   if(config.setup){
-    await sequelize.sync({force: true});
+    await sequelize.sync({force: false});
   }
 
   const Agent = setupAgent(agent);
-  const Metric = {};
+  const Metric = setupMetric(metric,agent);
 
   return {
     Agent,

@@ -2,7 +2,7 @@
 
 const agent = {
     id: 1,
-    uuid: 'yyy-yyy-yyy',
+    uuid: 'cdcdcdcdcdcd',
     name: 'fixture',
     username: 'bmonsalves',
     hostname: 'test-host',

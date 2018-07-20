@@ -6,6 +6,7 @@
   "scripts": {
     "eslint": "eslint --fix",
     "setup": "NODE_ENV=development DEBUG=node-iot:* node setup.js",
+    "example": "NODE_ENV=development DEBUG=node-iot:* node examples/index.js",
     "test": "DEBUG=node-iot:* nyc --reporter=lcov ava tests/ --verbose"
   },
   "author": "bmonsalves",
